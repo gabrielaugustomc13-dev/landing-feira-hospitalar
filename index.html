@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foi um prazer te conhecer na feira | Sua Empresa</title>
+<meta name="description" content="Obrigado pela visita ao nosso estande. Receba a apresentação, uma demonstração e uma proposta sob medida para o seu hospital.">
+<style>
+  :root{
+    --bg:#f6f9fb; --surface:#fff; --ink:#0f2433; --muted:#5a6f7e;
+    --brand:#0a7ea4; --brand-dark:#075f7c; --accent:#12b886; --line:#dde7ee;
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{--bg:#0b1820; --surface:#12252f; --ink:#e8f1f6; --muted:#9db3c1; --line:#223a47; --brand:#2fb0d8; --brand-dark:#5cc6e6}
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  header{padding:18px 0}
+  header .wrap{display:flex;justify-content:space-between;align-items:center}
+  .logo{font-weight:800;font-size:1.25rem;letter-spacing:-.02em}
+  .logo span{color:var(--brand)}
+  .btn{display:inline-block;background:var(--brand);color:#fff;border:0;padding:14px 26px;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer;transition:.2s}
+  .btn:hover{background:var(--brand-dark);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--brand);border:2px solid var(--brand)}
+  .hero{padding:48px 0 72px}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .tag{display:inline-block;background:color-mix(in srgb,var(--brand) 14%,transparent);color:var(--brand);padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:700}
+  h1{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;letter-spacing:-.03em;margin:16px 0}
+  h1 em{font-style:normal;color:var(--brand)}
+  .lead{font-size:1.15rem;color:var(--muted);max-width:52ch}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .stats{display:flex;gap:28px;margin-top:36px;flex-wrap:wrap}
+  .stats b{display:block;font-size:1.8rem;color:var(--brand);line-height:1}
+  .stats small{color:var(--muted)}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 10px 30px rgba(10,50,70,.08)}
+  .card h2{margin:0 0 4px;font-size:1.3rem}
+  .card p.sub{margin:0 0 18px;color:var(--muted);font-size:.95rem}
+  label{display:block;font-weight:600;font-size:.88rem;margin:12px 0 4px}
+  input,select,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;background:var(--bg);color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--brand);border-color:transparent}
+  .check{display:flex;gap:10px;align-items:flex-start;margin:16px 0;font-size:.82rem;color:var(--muted)}
+  .check input{width:auto;margin-top:4px}
+  .card .btn{width:100%;margin-top:6px}
+  .msg{margin-top:14px;padding:12px 14px;border-radius:10px;font-size:.92rem;display:none}
+  .msg.ok{display:block;background:#12b88622;color:var(--accent)}
+  .msg.err{display:block;background:#e0313122;color:#e03131}
+  section{padding:64px 0}
+  section h2.t{font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.02em;margin:0 0 8px}
+  section p.s{color:var(--muted);max-width:60ch;margin:0 0 36px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .feat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .feat .ic{font-size:1.8rem}
+  .feat h3{margin:10px 0 6px}
+  .feat p{margin:0;color:var(--muted);font-size:.95rem}
+  .alt{background:var(--surface);border-block:1px solid var(--line)}
+  .steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .step{position:relative;padding:24px;border-left:3px solid var(--brand);background:var(--bg);border-radius:0 var(--radius) var(--radius) 0}
+  .step::before{counter-increment:s;content:counter(s);font-weight:800;font-size:2rem;color:var(--brand);display:block;line-height:1}
+  .step h3{margin:8px 0 4px}
+  .step p{margin:0;color:var(--muted);font-size:.95rem}
+  .final{text-align:center}
+  .final .btn{margin-top:12px}
+  footer{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center;border-top:1px solid var(--line)}
+  @media(max-width:860px){
+    .hero .wrap,.grid3,.steps{grid-template-columns:1fr}
+    .hero{padding-top:20px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">Sua<span>Empresa</span></div>
+    <a class="btn ghost" href="#contato">Falar com a gente</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-top:32px">
+    <div class="wrap">
+      <div>
+        <span class="tag">📍 Nos vemos na Hospitalar 2026</span>
+        <h1>Foi um prazer te conhecer na feira. Agora vamos <em>transformar a gestão do seu hospital</em>.</h1>
+        <p class="lead">Conversamos no nosso estande sobre os desafios da sua operação. Aqui você recebe a apresentação completa, agenda uma demonstração e pede uma proposta sob medida, sem compromisso.</p>
+        <div class="cta-row">
+          <a class="btn" href="#contato">Quero minha demonstração</a>
+          <a class="btn ghost" href="#solucoes">Ver soluções</a>
+        </div>
+        <div class="stats">
+          <div><b>+250</b><small>hospitais atendidos</small></div>
+          <div><b>-30%</b><small>em retrabalho</small></div>
+          <div><b>24/7</b><small>suporte dedicado</small></div>
+        </div>
+      </div>
+
+      <div class="card" id="contato">
+        <h2>Receba o material e uma proposta</h2>
+        <p class="sub">Preencha em 1 minuto. Nossa equipe retorna em até 1 dia útil.</p>
+        <form id="lead-form" novalidate>
+          <label for="nome">Nome completo *</label>
+          <input id="nome" name="nome" autocomplete="name" required>
+
+          <label for="cargo">Cargo *</label>
+          <input id="cargo" name="cargo" autocomplete="organization-title" required placeholder="Ex.: Diretor(a) de TI">
+
+          <label for="hospital">Hospital / Instituição *</label>
+          <input id="hospital" name="hospital" autocomplete="organization" required>
+
+          <label for="email">E-mail corporativo *</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+
+          <label for="whatsapp">WhatsApp *</label>
+          <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" required placeholder="(11) 99999-9999" inputmode="tel">
+
+          <label for="interesse">Maior interesse</label>
+          <select id="interesse" name="interesse">
+            <option>Gestão hospitalar</option>
+            <option>Prontuário eletrônico</option>
+            <option>Faturamento e glosas</option>
+            <option>Suprimentos e estoque</option>
+            <option>Outro</option>
+          </select>
+
+          <label class="check">
+            <input type="checkbox" id="lgpd" required>
+            <span>Concordo em receber contato e material conforme a <a href="#" style="color:var(--brand)">Política de Privacidade</a> (LGPD).</span>
+          </label>
+
+          <button class="btn" type="submit" id="enviar">Quero receber</button>
+          <div id="msg" class="msg" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="solucoes" class="alt">
+    <div class="wrap">
+      <h2 class="t">O que conversamos no estande</h2>
+      <p class="s">Soluções pensadas para a rotina de hospitais e clínicas, da recepção ao faturamento.</p>
+      <div class="grid3">
+        <div class="feat"><div class="ic">🏥</div><h3>Gestão integrada</h3><p>Leitos, agenda, atendimento e financeiro em um só lugar, com indicadores em tempo real.</p></div>
+        <div class="feat"><div class="ic">📋</div><h3>Prontuário eletrônico</h3><p>Registro seguro, acesso rápido e aderência às normas de segurança do paciente.</p></div>
+        <div class="feat"><div class="ic">💰</div><h3>Faturamento sem glosas</h3><p>Validações automáticas antes do envio ao convênio para reduzir perdas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="t">Como funciona o próximo passo</h2>
+      <p class="s">Simples e sem burocracia.</p>
+      <div class="steps">
+        <div class="step"><h3>Você preenche o formulário</h3><p>Leva menos de um minuto.</p></div>
+        <div class="step"><h3>Falamos com você</h3><p>Entendemos sua realidade e agendamos a demonstração.</p></div>
+        <div class="step"><h3>Proposta sob medida</h3><p>Valores e prazos claros para o seu hospital.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt final">
+    <div class="wrap">
+      <h2 class="t">Vamos conversar?</h2>
+      <p class="s" style="margin-inline:auto">Prefere falar direto? Chame no WhatsApp.</p>
+      <a class="btn" id="wa-link" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="ano"></span> Sua Empresa · CNPJ 00.000.000/0001-00 · contato@suaempresa.com.br</div>
+</footer>
+
+<script>
+  // ====== CONFIGURAÇÃO: ajuste aqui ======
+  const CONFIG = {
+    // Cole aqui a URL do App da Web do Google Apps Script (veja LEIA-ME.md e google-apps-script.js).
+    // Se ficar vazio, os leads são salvos no navegador e abre o e-mail como alternativa.
+    endpoint: "https://script.google.com/macros/s/AKfycbyJWmS6B-wj7E96uZif7PJItfF9Ym6kGR6P2uPnZwnphkG11xw000PQS3DJFXhNO5uX7Q/exec",
+    emailFallback: "contato@suaempresa.com.br",
+    whatsapp: "5511999999999" // DDI+DDD+número, só dígitos
+  };
+  // =======================================
+
+  const $ = id => document.getElementById(id);
+  $("ano").textContent = new Date().getFullYear();
+  $("wa-link").href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent("Olá! Nos conhecemos na feira de hospitais e gostaria de saber mais.")}`;
+
+  $("whatsapp").addEventListener("input", e => {
+    let v = e.target.value.replace(/\D/g, "").slice(0, 11);
+    if (v.length > 6) v = v.replace(/^(\d{2})(\d{4,5})(\d{4}).*/, "($1) $2-$3");
+    else if (v.length > 2) v = v.replace(/^(\d{2})(\d+)/, "($1) $2");
+    e.target.value = v;
+  });
+
+  const msg = (t, c) => { const m = $("msg"); m.textContent = t; m.className = "msg " + c; };
+
+  $("lead-form").addEventListener("submit", async e => {
+    e.preventDefault();
+    const f = e.target;
+    const data = Object.fromEntries(new FormData(f));
+    for (const k of ["nome","cargo","hospital","email","whatsapp"]) {
+      if (!data[k] || !data[k].trim()) return msg("Preencha todos os campos obrigatórios.", "err");
+    }
+    if (!/^\S+@\S+\.\S+$/.test(data.email)) return msg("Informe um e-mail válido.", "err");
+    if (data.whatsapp.replace(/\D/g,"").length < 10) return msg("Informe um WhatsApp válido.", "err");
+    if (!$("lgpd").checked) return msg("É necessário aceitar a política de privacidade.", "err");
+
+    data.origem = "Feira de hospitais";
+    data.data = new Date().toISOString();
+    const btn = $("enviar"); btn.disabled = true; btn.textContent = "Enviando...";
+
+    try {
+      if (CONFIG.endpoint) {
+        // Google Apps Script: no-cors + text/plain evita bloqueio de CORS (a resposta fica opaca).
+        await fetch(CONFIG.endpoint, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(data)
+        });
+      } else {
+        try {
+          const all = JSON.parse(localStorage.getItem("leads") || "[]");
+          all.push(data); localStorage.setItem("leads", JSON.stringify(all));
+        } catch (_) {}
+        const body = Object.entries(data).map(([k,v]) => `${k}: ${v}`).join("\n");
+        window.location.href = `mailto:${CONFIG.emailFallback}?subject=${encodeURIComponent("Novo lead - feira")}&body=${encodeURIComponent(body)}`;
+      }
+      f.reset();
+      msg("Recebemos seus dados! Em breve entraremos em contato. 🎉", "ok");
+    } catch (err) {
+      msg("Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp.", "err");
+    } finally {
+      btn.disabled = false; btn.textContent = "Quero receber";
+    }
+  });
+</script>
+</body>
+</html>
